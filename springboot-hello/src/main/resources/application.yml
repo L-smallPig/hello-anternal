@@ -1,0 +1,127 @@
+server:
+  port: 18089
+
+spring:
+#  datasource:
+#    username: root
+#    password: root
+#    url: jdbc:mysql://192.168.10.187:3306/bhrview_test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+#    driver-class-name: com.mysql.jdbc.Driver
+  datasource:
+    url: jdbc:oracle:thin:@192.168.10.9:1521:orcl
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: QZJ_BAK_V30
+    password: QZJ_BAK_V30
+
+  #    配置视图解析器属性
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+#请求头
+jwt:
+  header: TOKEN
+  #盐值
+  base64-secret: meng
+  #过期时间
+  token-validity-in-seconds: 60000
+
+
+#xxl-job
+xxl:
+  job:
+    admin:
+      addresses:地址
+    executor:
+      appname: oriPlan-Job
+      ip:
+      port: 9998
+      logpath: /data/xxl-job/jobhandler
+      logretentiondays: -1
+    accessToken:
+
+minio:
+  endpoint: http://192.168.10.137
+  port: 9000
+  accessKey: minio
+  secretKey: minio@2021
+  bucketName: image
+  secure: false
+#  redis:
+#    timeout:
+#    lettuce:
+#      pool:
+#        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+#        max-wait: -1
+#        # 连接池最大连接数（使用负值表示没有限制） 默认 8
+#        max-active: 8
+#        # 连接池中的最大空闲连接 默认 8
+#        max-idle: 8
+#        # 连接池中的最小空闲连接 默认 0
+#        min-idle: 0
+
+#  rabbitmq:
+#    host: 192.168.7.135
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
+#    publisher-returns: true
+#    listener:
+#      simple:
+#        #  采用手动应答
+#        acknowledge-mode: manual
+#        #  当前监听容器数
+#        concurrency: 1
+#        #  最大数
+#        max-concurrency: 1
+#        #  是否支持重试
+#        retry:
+#          enabled: true
+
+#elasticsearch:
+#  ip: 127.0.0.1
+#  port: 9300
+#  pool: 5
+#  cluster:
+#    name: myElasticsearch
+#  server:
+#    port: 8181
+
+
+
+#mybatis:
+#  #mybatis 的mapping扫描
+#  mapper-locations: classpath:mapping/*.xml
+#  #对应实体包
+#  type-aliases-package: com.maple.springboot.springboothelloworld.entity
+#
+##showSql
+#logging:
+#  level:
+#    com:
+#      example:
+#        mapper : debug
+
+thread:
+  pool:
+    corePoolSize : 5
+    maxPoolSize : 10
+    queueCapacity : 20
+    keepAliveSeconds : 60
+    threadNamePrefix : hello-
+
+#rabbitmq:
+#  host: 127.0.0.1
+#  port: 15672
+#  username: guest
+#  password: guest
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+#  publisher-confirms: true

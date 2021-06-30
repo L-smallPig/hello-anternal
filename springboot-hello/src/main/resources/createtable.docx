@@ -1,0 +1,34 @@
+==============建表语句==============
+create table table1
+( 
+USER_ID VARCHAR2(36)	 not null, 
+USER_NAME VARCHAR2(50)	 not null, 
+USER_SEX CHAR(1),
+USER_AGE NUMBER(3),
+USER_WEIGHT NUMBER(4,2),
+USER_HEIGHT NUMBER(3,2)
+ );
+==============字段注释==============
+comment on column table1.'USER_ID' is '用户id'; 
+comment on column table1.'USER_NAME' is '用户名称'; 
+comment on column table1.'USER_SEX' is '用户性别'; 
+comment on column table1.'USER_AGE' is '用户年龄'; 
+comment on column table1.'USER_WEIGHT' is '用户体重'; 
+comment on column table1.'USER_HEIGHT' is '用户身高'; 
+==============建表语句==============
+create table table2
+( 
+USER_ID VARCHAR2(36)	 not null, 
+USER_NAME VARCHAR2(50)	 not null, 
+USER_SEX CHAR(1),
+USER_AGE NUMBER(3),
+USER_WEIGHT NUMBER(4,2),
+USER_HEIGHT NUMBER(3,2)
+ );
+==============字段注释==============
+comment on column table2.'USER_ID' is '用户id'; 
+comment on column table2.'USER_NAME' is '用户名称'; 
+comment on column table2.'USER_SEX' is '用户性别'; 
+comment on column table2.'USER_AGE' is '用户年龄'; 
+comment on column table2.'USER_WEIGHT' is '用户体重'; 
+comment on column table2.'USER_HEIGHT' is '用户身高'; 
